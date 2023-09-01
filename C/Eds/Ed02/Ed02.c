@@ -576,7 +576,98 @@ void method_17(void)
     IO_pause("Apertar ENTER para continuar");
 } // end method_03 ( )
 
-/* FALTA O METHOD 18, 19, 20 */
+
+/*
+ Method_011.
+*/
+void method_18(void)
+{
+    // definir dado
+    double x = 0.0; 
+    double y = 0.0;// definir variavel com valor inicial
+               // identificar
+    IO_id("Method_018 - Programa - v0.0");
+    // ler do teclado
+    x = IO_readdouble("Entre com o primeiro valor inteiro: ");
+    y = IO_readdouble("Entre com o segundo valor inteiro: ");
+    // testar valor
+    if( y > (x*2)){
+        IO_printf("%s | (%.2lf) > (%.2lf) * 2\n", "o segundo valor eh maior que o dobro do primeiro", y, x);
+    } else if (y == x) {
+        IO_printf("%s | (%.2lf) = (%.2lf)\n", "o segundo valor eh igual ao primeiro", y, x);
+    } else if (y > x) {
+        IO_printf("%s | (%.2lf) > (%.2lf)\n", "o segundo valor eh maior que o primeiro", y, x);
+    } else {
+        IO_printf("%s | (%.2lf) < (%.2lf)\n", "o segundo valor eh menor que o primeiro", y, x);
+    }
+          // encerrar
+    IO_pause("Apertar ENTER para continuar");
+} // end method_03 ( )
+
+/*
+ method_19.
+*/
+void method_19(void)
+{
+    double valor1, valor2, valor3;
+
+    IO_id("Method_19 - Programa - v0.0");
+
+    valor1 = IO_readdouble("Digite o primeiro valor real: ");
+    valor2 = IO_readdouble("Digite o segundo valor real: ");
+    valor3 = IO_readdouble("Digite o terceiro valor real: ");
+
+    if (valor1 != valor2)
+    {
+        if ((valor1 < valor3 && valor3 < valor2) || (valor2 < valor3 && valor3 < valor1))
+        {
+            IO_printf("O terceiro valor (%.2lf) esta entre os dois primeiros valores (%.2lf e %.2lf).\n", valor3, valor1, valor2);
+        }
+        else
+        {
+            IO_printf("O terceiro valor (%.2lf) NAO esta entre os dois primeiros valores (%.2lf e %.2lf).\n", valor3, valor1, valor2);
+        }
+    }
+    else
+    {
+        IO_printf("Os dois primeiros valores sao iguais\n");
+    }
+
+    IO_pause("Aperte ENTER para continuar");
+}
+
+
+/*
+ method_19.
+*/
+void Method_20(void)
+{
+    double valor1, valor2, valor3;
+
+    IO_id("Method_20 - Programa - v0.0");
+
+    valor1 = IO_readdouble("Digite o primeiro valor real: ");
+    valor2 = IO_readdouble("Digite o segundo valor real: ");
+    valor3 = IO_readdouble("Digite o terceiro valor real: ");
+
+    if (valor1 != valor2 && valor1 != valor3 && valor2 != valor3)
+    {
+        if (!(valor1 < valor3 && valor3 < valor2) || !(valor2 < valor3 && valor3 < valor1))
+        {
+            IO_printf("O terceiro valor (%.2lf) NAO esta entre os dois primeiros valores (%.2lf e %.2lf).\n", valor3, valor1, valor2);
+        }
+        else
+        {
+            IO_printf("O terceiro valor (%.2lf) esta entre os dois primeiros valores (%.2lf e %.2lf).\n", valor3, valor1, valor2);
+        }
+    }
+    else
+    {
+        IO_printf("Os valores sao iguais\n");
+    }
+
+    IO_pause("Aperte ENTER para continuar");
+}
 
 /*
  Funcao principal.
@@ -616,6 +707,9 @@ int main(void) // sem parametros
         printf("\n%s", "15 - Method_15");
         printf("\n%s", "16 - Method_16");
         printf("\n%s", "17 - Method_17");
+        printf("\n%s", "18 - Method_18");
+        printf("\n%s", "19 - Method_19");
+        printf("\n%s", "20 - Method_20");
         printf("\n");
         // ler a opcao do teclado
         printf("\n%s", "Opcao = ");
@@ -678,6 +772,15 @@ int main(void) // sem parametros
             break;
         case 17:
             method_17();
+            break;
+        case 18:
+            method_18();
+            break;
+        case 19:
+            method_19();
+            break;
+        case 20:
+            Method_20();
             break;
         default: // comportamento padrao
             printf("\nERRO: Opcao invalida.\n");
