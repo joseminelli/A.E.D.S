@@ -488,40 +488,101 @@ void method_16(void)
     int x = 0; 
     int y = 0;// definir variavel com valor inicial
                // identificar
-    IO_id("Method_011 - Programa - v0.0");
+    IO_id("Method_016 - Programa - v0.0");
     // ler do teclado
     x = IO_readint("Entre com o primeiro valor inteiro: ");
     y = IO_readint("Entre com o segundo valor inteiro: ");
     // testar valor
     if (x == 0)
     {
-        IO_printf("%s (%d)\n", "Valor de x eh par", x);
+        IO_printf("%s (%d)\n", "o primeiro valor eh par", x);
     }
     if(y == 0){
-        IO_printf("%s (%d)\n", "Valor de y nao eh impar", y);
+        IO_printf("%s (%d)\n", "o segundo valor nao eh impar", y);
     }
     else
     {
         if (x % 2 == 0)
         {
-            IO_printf("%s (%d)\n", "Valor de x eh par", x);
+            IO_printf("%s (%d)\n", "o primeiro valor eh par", x);
         }
         else
         {
-            IO_printf("%s (%d)\n", "Valor de x nao eh impar", x);
+            IO_printf("%s (%d)\n", "o primeiro valor nao eh impar", x);
         } // end if
         if (y % 2 != 0)
         {
-            IO_printf("%s (%d)\n", "Valor de y eh impar", y);
+            IO_printf("%s (%d)\n", "o segundo valor eh impar", y);
         }
         else
         {
-            IO_printf("%s (%d)\n", "Valor de y nao eh impar", y);
+            IO_printf("%s (%d)\n", "o segundo valor nao eh impar", y);
         } // end if
     }     // end if
           // encerrar
     IO_pause("Apertar ENTER para continuar");
 } // end method_03 ( )
+
+/*
+ Method_011.
+*/
+void method_17(void)
+{
+    // definir dado
+    int x = 0; 
+    int y = 0;// definir variavel com valor inicial
+               // identificar
+    IO_id("Method_017 - Programa - v0.0");
+    // ler do teclado
+    y = IO_readint("Entre com o primeiro valor inteiro: ");
+    x = IO_readint("Entre com o segundo valor inteiro: ");
+    // testar valor
+    if (x == 0)
+    {
+        IO_printf("%s (%d)\n", "o segundo valor eh par e nulo", x);
+    }
+    if(y == 0){
+        IO_printf("%s (%d)\n", "o primeiro valor nao eh impar e nem negativo", y);
+    }
+    else
+    {
+        if (y % 2 != 0)
+        {
+             if (y > 0){
+                IO_printf("%s (%d)\n", "o primeiro valor eh impar e positivo", y);
+            } else {
+                IO_printf("%s (%d)\n", "o primeiro valor eh impar e negativo", y);
+            }
+        }
+        else
+        {
+            IO_printf("%s (%d)\n", "o primeiro valor nao eh impar", y);
+        } // end if
+        if (x % 2 == 0)
+        {
+            if (x > 0){
+                IO_printf("%s (%d)\n", "o segundo valor eh par e positivo", x);
+            } else {
+                IO_printf("%s (%d)\n", "o segundo valor eh par e negativo", x);
+            }
+        }
+        else
+        {
+            IO_printf("%s (%d)\n", "o segundo valor nao eh par", x);
+        } // end if
+        
+    }     // end if
+          // encerrar
+    IO_pause("Apertar ENTER para continuar");
+} // end method_03 ( )
+
+/* FALTA O METHOD 18, 19, 20 */
+
+/*
+ Funcao principal.
+ @return codigo de encerramento
+ @param e - quantidade de valores a serem testados
+*/
 
 int main(void) // sem parametros
 {
@@ -554,6 +615,7 @@ int main(void) // sem parametros
         printf("\n%s", "14 - Method_14");
         printf("\n%s", "15 - Method_15");
         printf("\n%s", "16 - Method_16");
+        printf("\n%s", "17 - Method_17");
         printf("\n");
         // ler a opcao do teclado
         printf("\n%s", "Opcao = ");
@@ -613,6 +675,9 @@ int main(void) // sem parametros
             break;
         case 16:
             method_16();
+            break;
+        case 17:
+            method_17();
             break;
         default: // comportamento padrao
             printf("\nERRO: Opcao invalida.\n");
