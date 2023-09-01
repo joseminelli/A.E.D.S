@@ -692,14 +692,11 @@ int main(void) // sem parametros
   /*
   ---------------------------------------------- documentacao complementar
   ---------------------------------------------- notas / observacoes / comentarios
-  ---------------------------------------------- previsao de testes
-  a.) 0
-  b.) 5
-  c.) -5
+
   ---------------------------------------------- historico
   Versao Data Modificacao
-   0.1 __/__ esboco
+   0.1 - 01/09 esboco
   ---------------------------------------------- testes
   Versao Teste
-   0.1 01. ( OK ) identificacao de programa
+   0.1 - 01. ( OK ) identificacao de programa
   */
