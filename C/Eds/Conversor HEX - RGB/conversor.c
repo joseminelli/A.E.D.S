@@ -61,7 +61,7 @@ int main() {
     printf("1 - HEX -> RGB\n");
     printf("2 - RGB -> HEX\n");
     printf("0 - Sair\n");
-    printf("Escolha uma opcao: ");
+    printf("\nEscolha uma opcao: ");
     scanf(" %d", &opcao);
 
     switch (opcao)
