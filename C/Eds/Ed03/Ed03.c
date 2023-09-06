@@ -4,7 +4,7 @@
 */
 // dependencias
 #include "io.h" // para definicoes proprias
-#define STR_SIZE 80
+#define STR_SIZE 20
 /**
  Method_00 - nao faz nada.
 */
@@ -345,6 +345,145 @@ void method_12(void)
     IO_pause("Aperte ENTER para continuar");
 } // end method_12()
 
+/**
+ Method_13 - Ler uma palavra e contar/mostrar as letras maiúsculas percorrendo do fim para o início da palavra.
+*/
+void method_13(void)
+{
+    // Definir uma variável para armazenar a palavra
+    char palavra[STR_SIZE];
+
+    // Identificar o método
+    IO_id("Method_13 - v0.0");
+
+    // Ler uma palavra do teclado
+    IO_printf("Digite uma palavra: ");
+    scanf("%s", palavra);
+
+    // Contar e mostrar as letras maiúsculas
+    int i = strlen(palavra) - 1;
+    int contador = 0;
+    IO_printf("Letras maiusculas na palavra: ");
+    while (palavra[i] != '\0')
+    {
+        if (palavra[i] >= 'A' && palavra[i] <= 'Z')
+        {
+            IO_printf("%c ", palavra[i]);
+            contador++;
+        }
+        i--;
+    }
+    IO_printf("\nTotal de letras maiusculas: %d\n", contador);
+
+    // Encerrar
+    getchar();
+    IO_pause("Aperte ENTER para continuar");
+} // end method_13()
+
+/**
+ Method_14 - Ler uma palavra e contar/mostrar todos os simboos que forem letras
+*/
+void method_14(void)
+{
+    // Definir uma variável para armazenar a palavra
+    char palavra[STR_SIZE];
+
+    // Identificar o método
+    IO_id("Method_14 - v0.0");
+
+    // Ler uma palavra do teclado
+    IO_printf("Digite uma palavra: ");
+    scanf("%s", palavra);
+
+    // Contar e mostrar as letras maiúsculas
+    int i = 0;
+    int contador = 0;
+    IO_printf("Letras na palavra: ");
+    while (palavra[i] != '\0')
+    {
+        if (palavra[i] >= 'A' && palavra[i] <= 'Z' || palavra[i] >= 'a' && palavra[i] <= 'z')
+        {
+            IO_printf("%c ", palavra[i]);
+            contador++;
+        }
+        i++;
+    }
+    IO_printf("\nTotal de letras: %d\n", contador);
+
+    // Encerrar
+    getchar();
+    IO_pause("Aperte ENTER para continuar");
+} // end method_14()
+
+/**
+ Method_15 - Ler uma palavra e contar/mostrar todos os digitos percorrendo do início para o fim da palavra.
+*/
+void method_15(void)
+{
+    // Definir uma variável para armazenar a palavra
+    char palavra[STR_SIZE];
+
+    // Identificar o método
+    IO_id("Method_15 - v0.0");
+
+    // Ler uma palavra do teclado
+    IO_printf("Digite uma palavra: ");
+    scanf("%s", palavra);
+
+    // Contar e mostrar as letras maiúsculas
+    int i = strlen(palavra) - 1;
+    int contador = 0;
+    IO_printf("digitos na palavra: ");
+    while (palavra[i] != '\0')
+    {
+        if (palavra[i] >= '1' && palavra[i] <= '9')
+        {
+            IO_printf("%c ", palavra[i]);
+            contador++;
+        }
+        i--;
+    }
+    IO_printf("\nTotal de letras digitos: %d\n", contador);
+
+    // Encerrar
+    getchar();
+    IO_pause("Aperte ENTER para continuar");
+} // end method_15()
+
+/**
+ Method_16 - Ler uma palavra e contar/mostrar tudo que não for digito ou letra percorrendo do fim para o inicio da palavra.
+*/
+void method_16(void)
+{
+    // Definir uma variável para armazenar a palavra
+    char palavra[STR_SIZE];
+
+    // Identificar o método
+    IO_id("Method_15 - v0.0");
+
+    // Ler uma palavra do teclado
+    IO_printf("Digite uma palavra: ");
+    scanf("%s", palavra);
+
+    // Contar e mostrar as letras maiúsculas
+    int i = strlen(palavra) - 1;
+    int contador = 0;
+    IO_printf("digitos na palavra: ");
+    while (palavra[i] != '\0')
+    {
+        if (!(palavra[i] >= '1' && palavra[i] <= '9') && !(palavra[i] >= 'A' && palavra[i] <= 'Z') && !(palavra[i] >= 'a' && palavra[i] <= 'z'))
+        {
+            IO_printf("%c ", palavra[i]);
+            contador++;
+        }
+        i--;
+    }
+    IO_printf("\nTotal de letras digitos: %d\n", contador);
+
+    // Encerrar
+    getchar();
+    IO_pause("Aperte ENTER para continuar");
+} // end method_1()
 
 /*
  Funcao principal.
@@ -374,7 +513,10 @@ int main()
         IO_println("10 - repeticao com confirmacao");
         IO_println("11 - ler uma palavra e mostrar as letras maiusculas");
         IO_println("12 - ler uma palavra e contar/mostrar as letras maiusculas");
-
+        IO_println("13 - ler uma palavra e contar/mostrar as letras maiusculas 2");
+        IO_println("14 - ler uma palavra e contar/mostrar as letras");
+        IO_println("15 - ler uma palavra e contar/mostrar as digitos");
+        IO_println("16 - ler uma palavra e contar/mostrar os caracteres que não são digitos ou letras");
 
         IO_println("");
         x = IO_readint("Entrar com uma opcao: ");
@@ -413,12 +555,24 @@ int main()
             break;
         case 10:
             method_10();
-            break; 
+            break;
         case 11:
             method_11();
             break;
         case 12:
             method_12();
+            break;
+        case 13:
+            method_13();
+            break;
+        case 14:
+            method_14();
+            break;
+        case 15:
+            method_15();
+            break;
+        case 16:
+            method_16();
             break;
         default:
             IO_pause(IO_concat("Valor diferente das opcoes [0 ... 3] (", IO_concat(IO_toString_d(x), ")")));
