@@ -32,6 +32,7 @@ void method_01(void)
         x = x - 1;
     } // end while
       // encerrar
+    getchar();
     IO_pause("Apertar ENTER para continuar");
 } // end method_01 ( )
 /**
@@ -491,13 +492,14 @@ void method_16(void)
 */
 int main()
 {
+    IO_trace = false;
     // definir dado
     int x = 0;
     // repetir até desejar parar
     do
     {
         // identificar
-        IO_id("EXEMPLO0300 - Programa - v0.0");
+        IO_id("\nEXEMPLO0300 - Programa - v0.0");
         // ler do teclado
         IO_println("Opcoes");
         IO_println("0 - parar");
