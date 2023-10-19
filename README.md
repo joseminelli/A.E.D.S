@@ -8,7 +8,7 @@ Bem-vindo ao repositório "AEDS" Este repositório contém os códigos desenvolv
 
 -  [**/C++**](/C++) Aqui estão os códigos desenvolvidos em C++.
 
-- [**/Java**](/Java)* Neste diretório, você encontrará os códigos escritos em Java.
+- [**/Java**](/Java) Neste diretório, você encontrará os códigos escritos em Java.
 
 ## Uso e Contribuições
 
