@@ -5,15 +5,19 @@ Bem-vindo ao repositório "AEDS" Este repositório contém os códigos desenvolv
 ## Estrutura do Repositório
 
 - [**C**](/C)  Este diretório contém os códigos desenvolvidos em linguagem C. <br>
-      ╎<br>
-      ╰-- [Conversor de cores](/C/Conversor%20HEX%20-%20RGB)<br>
-      ╎<br>
-      ╰-- [Eds](/C/Eds)<br>
-      ╎<br>
-      ╰-- [1º prova](/C/1º%20prova%20Aeds1)
+    ‎ ‎ ‎   ╎<br>
+     ‎ ‎ ‎  ╰-- [Conversor de cores](/C/Conversor%20HEX%20-%20RGB)<br>
+    ‎ ‎ ‎   ╎<br>
+    ‎ ‎ ‎   ╰-- [Eds](/C/Eds)<br>
+     ‎ ‎ ‎  ╎<br>
+     ‎ ‎ ‎  ╰-- [1º prova](/C/1º%20prova%20Aeds1)
 
 
--  [**C++**](/C++) Aqui estão os códigos desenvolvidos em C++.
+-  [**C++**](/C++) Aqui estão os códigos desenvolvidos em C++.<br>
+    ‎ ‎ ‎   ╎<br>
+    ‎ ‎ ‎   ╰-- [Atividades](/C++/Atividades)<br>
+    ‎ ‎ ‎   ╎<br>
+     ‎ ‎ ‎  ╰-- [Programas](/C++/Programas)<br>
 
 - [**Java**](/Java) Neste diretório, você encontrará os códigos escritos em Java.
 
