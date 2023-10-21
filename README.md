@@ -8,7 +8,7 @@ Bem-vindo ao repositório "AEDS" Este repositório contém os códigos desenvolv
     ‎ ‎ ‎   ╎<br>
      ‎ ‎ ‎  ╰-- [Conversor de cores](/C/Conversor%20HEX%20-%20RGB)<br>
     ‎ ‎ ‎   ╎<br>
-    ‎ ‎ ‎   ╰-- [Eds](/C/Eds)<br>
+    ‎ ‎ ‎   ╰-- [Estudo Dirigido](/C/Estudo%20Dirigido)<br>
      ‎ ‎ ‎  ╎<br>
      ‎ ‎ ‎  ╰-- [1º prova](/C/1º%20prova%20Aeds1)
 
