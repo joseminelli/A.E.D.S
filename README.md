@@ -32,7 +32,7 @@ Sinta-se à vontade para explorar os códigos e utilizá-los para aprendizado ou
 2. Clone o repositório forkado para o seu ambiente de desenvolvimento:
 
    ```bash
-   git clone https://github.com/seu-usuario/Aeds1.git
+   git clone https://github.com/joseminelli/A.E.D.S.git
 
 3. Faça as alterações ou adições desejadas nos códigos.
 
