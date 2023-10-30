@@ -18,6 +18,8 @@ Bem-vindo ao repositório "AEDS" Este repositório contém os códigos desenvolv
     ‎ ‎ ‎   ╰-- [Atividades](/C++/Atividades)<br>
     ‎ ‎ ‎   ╎<br>
      ‎ ‎ ‎  ╰-- [To Do](/C++/To%20Do)<br>
+    ‎ ‎ ‎   ╎<br>
+     ‎ ‎ ‎  ╰-- [Type Game](/C++/Type%20Game)<br>
 
 - [**Java**](/Java) Neste diretório, você encontrará os códigos escritos em Java.<br>
     ‎ ‎ ‎   ╎<br>
