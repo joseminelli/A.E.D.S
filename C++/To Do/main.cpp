@@ -3,28 +3,13 @@
 #include <sstream>
 #include <cstdlib>
 #include <vector>
+#include "JMRL.h"
 
 void RgbText(int red, int green, int blue, const char* text) {
     printf("\x1b[38;2;%d;%d;%dm%s\x1b[0m", red, green, blue, text);
 }
 
-void Encerrar() {
-    printf("\nPressione ENTER para continuar...");
-    char x = '0';
-    do {
-        x = getchar();
-    } while ('\n' != x);
-    getchar();
-}
-
-void LimparTela() {
-#ifdef _WIN32
-    system("cls");
-#else
-    system("clear");
-#endif
-}
-    void PrintLegend() {
+void PrintLegend() {
     printf("\n");
     std::cout << "+-----------------------+" << std::endl;
     std::cout << "| Cores das prioridades |" << std::endl;
