@@ -51,8 +51,8 @@
 
 // ---------------------- definicoes de constantes
 
-const bool FALSE = false; // definir constante
-const bool TRUE = true;   // definir constante
+//const bool FALSE = false; // definir constante
+//const bool TRUE = true;   // definir constante
 
 const char EOS = '\0';    // definir fim de cadeia de caracteres
 const char EOL = '\n';    // definir mudanca de linha

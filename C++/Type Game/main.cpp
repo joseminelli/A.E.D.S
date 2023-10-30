@@ -5,6 +5,7 @@
 #include <thread>
 #include <iomanip>
 #include <string>
+#include <Windows.h>
 #include "JMRL.h"
 
 using namespace std;
@@ -43,23 +44,38 @@ string SortearFrase()
     return linha;
 }
 
-int main()
+void ClearCurrentLine()
 {
+    std::cout << '\r'; // Retorna ao início da linha
+    for (int i = 0; i < 80; ++i) // Limpa a linha com espaços em branco
+        std::cout << ' ';
+    std::cout << '\r'; // Retorna ao início da linha novamente
+}
+
+void jogo(){
     int acertos = 0, erros = 0, naoDigitados = 0;
     LimparTela();
     string frase = SortearFrase();
 
     clock_t start, end;
     double elapsed_seconds;
-    cout << "Bem vindo ao jogo de digitacao!\nPressione Enter para comecar a digitar." << endl;
-    cin.get();
 
     start = clock();
 
-    Print("Digite a frase: ");
+    Print("Sua frase: ");
     ColorText(frase, COLOR_GREEN);
     Println("");
-    Println("");
+      for (int i = 5; i >= 1; --i)
+    {
+        ClearCurrentLine(); // Limpa a linha atual
+        std::cout << i << "..." << std::flush;
+        Sleep(1000);
+    }
+    
+    ClearCurrentLine();
+    std::cout << "Vai!" << std::endl;
+    Sleep(300);
+    
     string input;
     getline(cin, input);
     LimparTela();
@@ -108,5 +124,40 @@ int main()
     cout << "Precisao digitada: " << fixed << setprecision(2) << precisao << "%" << endl;
 
     Encerrar();
+}
+
+int main()
+{
+    
+    LimparTela();
+    int opcao;
+    do
+    {
+        ColorText("Bem vindo ao jogo de digitacao!\n", COLOR_BLUE);
+        ColorText("2 - Cadastrar-frase (Em breve)\n", COLOR_GRAY);
+        printf("1 - Jogar\n");
+        printf("0 - Sair\n");
+        printf("\nEscolha uma opcao: ");
+        scanf(" %d", &opcao);
+
+        switch (opcao)
+        {
+        case 0:
+            Encerrar();
+            exit(0);
+        case 1:
+            cin.ignore();
+            jogo();
+            break;
+        case 2:
+            printf("Opcao indisponivel no momento.\n");
+            Sleep(3000);
+            LimparTela();
+        default:
+            printf("Opcao invalida.\n");
+            Sleep(2000);
+            LimparTela();
+        }
+    } while (opcao != 0);
     return 0;
 }
