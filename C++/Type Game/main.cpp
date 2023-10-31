@@ -44,6 +44,28 @@ string SortearFrase()
     return linha;
 }
 
+void CadastrarPalavra(){
+    LimparTela();
+    string palavra;
+    ColorText("AVISO: Lembre de nao usar acentos, o jogo so suporta a tabela ASCII padrao\n", COLOR_RED);
+    ColorText("(para voltar ao menu, digite 'menu')\n", COLOR_GRAY);
+    cout << "Digite a frase que deseja cadastrar: ";
+    getline(cin, palavra);
+    if (palavra == "menu")
+    {
+        return;
+    }
+    FILE *arquivo = fopen("../frases.txt", "a");
+    if (arquivo == nullptr)
+    {
+        cerr << "Erro ao abrir o arquivo frases.txt." << endl;
+        return;
+    }
+    fprintf(arquivo, "%s\n", palavra.c_str());
+    ColorText("Frase cadastrada com sucesso!\n", COLOR_GREEN);
+    fclose(arquivo);
+}
+
 void ClearCurrentLine()
 {
     std::cout << '\r'; // Retorna ao início da linha
@@ -122,19 +144,16 @@ void jogo(){
     double precisao = (static_cast<double>(acertos) / (acertos + erros)) * 100;
     cout << "Precisao total: " << fixed << setprecision(2) << precisaotot << "%" << endl;
     cout << "Precisao digitada: " << fixed << setprecision(2) << precisao << "%" << endl;
-
-    Encerrar();
 }
 
 int main()
 {
-    
     LimparTela();
     int opcao;
     do
     {
         ColorText("Bem vindo ao jogo de digitacao!\n", COLOR_BLUE);
-        ColorText("2 - Cadastrar-frase (Em breve)\n", COLOR_GRAY);
+        printf("2 - Cadastrar-frase\n");
         printf("1 - Jogar\n");
         printf("0 - Sair\n");
         printf("\nEscolha uma opcao: ");
@@ -148,11 +167,15 @@ int main()
         case 1:
             cin.ignore();
             jogo();
+            Encerrar();
+            LimparTela();
             break;
         case 2:
-            printf("Opcao indisponivel no momento.\n");
-            Sleep(3000);
+            cin.ignore();
+            CadastrarPalavra();
+            Encerrar();
             LimparTela();
+            break;
         default:
             printf("Opcao invalida.\n");
             Sleep(2000);
