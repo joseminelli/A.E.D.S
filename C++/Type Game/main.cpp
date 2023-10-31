@@ -44,7 +44,8 @@ string SortearFrase()
     return linha;
 }
 
-void CadastrarPalavra(){
+void CadastrarPalavra()
+{
     LimparTela();
     string palavra;
     ColorText("AVISO: Lembre de nao usar acentos, o jogo so suporta a tabela ASCII padrao\n", COLOR_RED);
@@ -66,15 +67,8 @@ void CadastrarPalavra(){
     fclose(arquivo);
 }
 
-void ClearCurrentLine()
+void jogo()
 {
-    std::cout << '\r'; // Retorna ao início da linha
-    for (int i = 0; i < 80; ++i) // Limpa a linha com espaços em branco
-        std::cout << ' ';
-    std::cout << '\r'; // Retorna ao início da linha novamente
-}
-
-void jogo(){
     int acertos = 0, erros = 0, naoDigitados = 0;
     LimparTela();
     string frase = SortearFrase();
@@ -87,17 +81,17 @@ void jogo(){
     Print("Sua frase: ");
     ColorText(frase, COLOR_GREEN);
     Println("");
-      for (int i = 5; i >= 1; --i)
+    for (int i = 5; i >= 1; --i)
     {
         ClearCurrentLine(); // Limpa a linha atual
         std::cout << i << "..." << std::flush;
         Sleep(1000);
     }
-    
+
     ClearCurrentLine();
     std::cout << "Vai!" << std::endl;
     Sleep(300);
-    
+
     string input;
     getline(cin, input);
     LimparTela();
@@ -184,3 +178,4 @@ int main()
     } while (opcao != 0);
     return 0;
 }
+

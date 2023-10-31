@@ -51,9 +51,6 @@
 
 // ---------------------- definicoes de constantes
 
-//const bool FALSE = false; // definir constante
-//const bool TRUE = true;   // definir constante
-
 const char EOS = '\0';    // definir fim de cadeia de caracteres
 const char EOL = '\n';    // definir mudanca de linha
 const char ENDL[] = "\n"; // definir mudanca de linha
@@ -77,15 +74,22 @@ bool IO_trace = true; // inicialmente habilitado
 
 // ---------------------- para tratamento de erros#ifndef COLORS_H
 
-// color.h
-#ifndef COLOR_H
-#define COLOR_H
-
+// Color.h (para uso em C++)
 #ifdef __cplusplus
 #include <iostream>
-extern "C"
-{
+/**
+ * Função para colorir o texto no terminal.
+ * @param text texto a ser colorido
+ * @param color_code código da cor a ser usada(colocada em Defines)
+*/
+void ColorText(const std::string& text, const std::string& color_code) {
+    std::cout << color_code << text << "\e[m";
+}
 #endif
+
+// Color.h (para uso em C)
+#ifndef COLOR_H
+#define COLOR_H
 
 // Define macros for ANSI color codes
 #define COLOR_OFF "\x1b[0m"
@@ -130,17 +134,14 @@ extern "C"
 #define COLOR_PINKBG "\x1b[35;7m"
 #define COLOR_PINKSUB "\x1b[35;4m"
 
-    void ColorText(const char *text, const char *color_code)
-    {
-        printf("%s%s%s", color_code, text, "\e[m");
-    }
+/**
+ * Função para colorir o texto no terminal.
+ * @param text texto a ser colorido
+ * @param color_code código da cor a ser usada(colocada em Defines)
+*/
+void ColorText(const char *text, const char *color_code) {
+    printf("%s%s%s", color_code, text, COLOR_OFF);
 }
-#ifdef __cplusplus
- void ColorText(const std::string& text, const std::string& color_code) {
-    std::cout << color_code << text << "\e[m";
- }
-#endif
-
 #endif
 //------------ para entradas e saidas
 
@@ -307,7 +308,6 @@ bool New_bools(int size)
  */
 #ifdef __cplusplus
 #include <locale>
-
 void SetLocale(const std::string local)
 {
     std::locale::global(std::locale(local));
@@ -523,4 +523,11 @@ int NumeroAleatorio(int min, int max) {
     return (rand() % (max - min + 1)) + min;
 }
 
+/*
+    Funcao para limpar a linha atual
+*/
+void ClearCurrentLine() {
+    printf("\033[2K\r"); // Código de escape para limpar a linha e retornar ao início
+    fflush(stdout); // Garante que a saída seja exibida imediatamente
+}
 #endif
