@@ -21,10 +21,6 @@ Bem-vindo ao repositório "AEDS" Este repositório contém os códigos desenvolv
     ‎ ‎ ‎   ╎<br>
      ‎ ‎ ‎  ╰-- [Type Game](/C++/Type%20Game)<br>
 
-- [**Java**](/Java) Neste diretório, você encontrará os códigos escritos em Java.<br>
-    ‎ ‎ ‎   ╎<br>
-     ‎ ‎ ‎  ╰-- Em breve
-
 ## Uso e Contribuições
 
 Sinta-se à vontade para explorar os códigos e utilizá-los para aprendizado ou referência. Se desejar contribuir ou corrigir algum problema nos códigos, siga as etapas a seguir:
